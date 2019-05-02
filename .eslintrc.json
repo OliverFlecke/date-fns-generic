@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "globals": {
     "Atomics": "readonly",
@@ -15,5 +16,8 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": ["standard", "prettier", "plugin:@typescript-eslint/recommended"],
-  "rules": {}
+  "rules": {
+    "indent": ["off", 2],
+    "@typescript-eslint/indent": ["error", 2]
+  }
 }

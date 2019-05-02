@@ -18,6 +18,9 @@
   "files": [
     "lib/**/*"
   ],
+  "dependencies": {
+    "date-fns": "^1.30.1"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.12",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
