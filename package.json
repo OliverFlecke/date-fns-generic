@@ -35,5 +35,21 @@
     "prettier-eslint": "^8.8.2",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md}": [
+      "prettier **/*.{md} --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "prettier **/*.{js,ts} --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
