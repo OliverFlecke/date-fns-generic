@@ -1,4 +1,4 @@
-import { addTimeSize } from './addTimeSize';
+import { addTimeSize } from '../addTimeSize';
 
 describe('Adding sizes', (): void => {
   test.each([
@@ -43,7 +43,7 @@ describe('Adding sizes', (): void => {
 
   test.each([
     [new Date(2019, 4, 4), new Date(2019, 7, 4)],
-    [new Date(2019, 10, 17), new Date(2019, 1, 17)],
+    [new Date(2019, 10, 17), new Date(2020, 1, 17)],
   ])(
     'One quarter (default)',
     (date, expected): void => {

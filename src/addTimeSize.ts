@@ -8,7 +8,7 @@ import {
   addWeeks,
   addMinutes,
 } from 'date-fns';
-import { TimeSize } from '../TimeSize';
+import { TimeSize } from './TimeSize';
 
 /**
  * @param date The date to add the time size to

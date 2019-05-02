@@ -1,6 +1,6 @@
 {
   "name": "date-fns-generic",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Generic utils for the `date-fns` library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,11 +9,20 @@
   ],
   "author": "Oliver Fleckenstein",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OliverFlecke/date-fns-generic"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier src/**/*.{js,jsx,ts,tsx,scss,md} --write",
     "lint": "npm run format && eslint --fix \"**/*.{ts,tsx}\"",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "files": [
     "lib/**/*"
