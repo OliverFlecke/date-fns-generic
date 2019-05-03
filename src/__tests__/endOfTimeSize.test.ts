@@ -104,6 +104,26 @@ describe('End of', (): void => {
   test.each([
     [
       new Date(2019, 4, 2, 10, 15, 31, 123),
+      new Date(2019, 4, 5, 23, 59, 59, 999),
+    ],
+    [
+      new Date(2018, 6, 19, 3, 43, 11, 742),
+      new Date(2018, 6, 22, 23, 59, 59, 999),
+    ],
+    [
+      new Date(2020, 11, 7, 19, 27, 7, 13),
+      new Date(2020, 11, 13, 23, 59, 59, 999),
+    ],
+  ])(
+    'isoweek',
+    (date, expected): void => {
+      expect(endOfTimeSize(date, 'isoweek')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [
+      new Date(2019, 4, 2, 10, 15, 31, 123),
       new Date(2019, 4, 31, 23, 59, 59, 999),
     ],
     [
@@ -158,6 +178,26 @@ describe('End of', (): void => {
     'year',
     (date, expected): void => {
       expect(endOfTimeSize(date, 'year')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [
+      new Date(2019, 4, 2, 10, 15, 31, 123),
+      new Date(2019, 11, 29, 23, 59, 59, 999),
+    ],
+    [
+      new Date(2018, 6, 19, 3, 43, 11, 742),
+      new Date(2018, 11, 30, 23, 59, 59, 999),
+    ],
+    [
+      new Date(2020, 11, 7, 19, 27, 7, 13),
+      new Date(2021, 0, 3, 23, 59, 59, 999),
+    ],
+  ])(
+    'isoyear',
+    (date, expected): void => {
+      expect(endOfTimeSize(date, 'isoyear')).toEqual(expected);
     },
   );
 });

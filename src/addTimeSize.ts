@@ -40,6 +40,7 @@ export default function addTimeSize(
     case TimeSize.Day:
       return addDays(date, amount || 1);
 
+    case TimeSize.ISOWeek:
     case TimeSize.Week:
       return addWeeks(date, amount || 1);
 
@@ -49,6 +50,7 @@ export default function addTimeSize(
     case TimeSize.Quarter:
       return addQuarters(date, amount || 1);
 
+    case TimeSize.ISOYear:
     case TimeSize.Year:
       return addYears(date, amount || 1);
 

@@ -8,6 +8,8 @@ import {
   endOfHour,
   endOfMinute,
   endOfSecond,
+  endOfISOWeek,
+  endOfISOYear,
 } from 'date-fns';
 
 export default function endOfTimeSize(
@@ -33,6 +35,9 @@ export default function endOfTimeSize(
     case TimeSize.Week:
       return endOfWeek(date);
 
+    case TimeSize.ISOWeek:
+      return endOfISOWeek(date);
+
     case TimeSize.Month:
       return endOfMonth(date);
 
@@ -41,6 +46,9 @@ export default function endOfTimeSize(
 
     case TimeSize.Year:
       return endOfYear(date);
+
+    case TimeSize.ISOYear:
+      return endOfISOYear(date);
 
     default:
       throw new TypeError(`Unsupported time size: ${timeSize}`);

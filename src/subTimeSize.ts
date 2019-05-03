@@ -40,12 +40,14 @@ export default function subTimeSize(
     case TimeSize.Day:
       return subDays(date, amount || 1);
 
+    case TimeSize.ISOWeek:
     case TimeSize.Week:
       return subWeeks(date, amount || 1);
 
     case TimeSize.Month:
       return subMonths(date, amount || 1);
 
+    case TimeSize.ISOYear:
     case TimeSize.Year:
       return subYears(date, amount || 1);
 

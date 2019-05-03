@@ -63,6 +63,17 @@ describe('Start of', (): void => {
   );
 
   test.each([
+    [new Date(2019, 4, 2, 10, 15, 31, 123), new Date(2019, 3, 29, 0, 0, 0, 0)],
+    [new Date(2018, 6, 19, 3, 43, 11, 742), new Date(2018, 6, 16, 0, 0, 0, 0)],
+    [new Date(2020, 11, 7, 19, 27, 7, 13), new Date(2020, 11, 7, 0, 0, 0, 0)],
+  ])(
+    'isoweek',
+    (date, expected): void => {
+      expect(startOfTimeSize(date, 'isoweek')).toEqual(expected);
+    },
+  );
+
+  test.each([
     [new Date(2019, 4, 2, 10, 15, 31, 123), new Date(2019, 4, 1, 0, 0, 0, 0)],
     [new Date(2018, 6, 19, 3, 43, 11, 742), new Date(2018, 6, 1, 0, 0, 0, 0)],
     [new Date(2020, 11, 7, 19, 27, 7, 13), new Date(2020, 11, 1, 0, 0, 0, 0)],
@@ -92,6 +103,17 @@ describe('Start of', (): void => {
     'year',
     (date, expected): void => {
       expect(startOfTimeSize(date, 'year')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [new Date(2019, 4, 2, 10, 15, 31, 123), new Date(2018, 11, 31, 0, 0, 0, 0)],
+    [new Date(2018, 6, 19, 3, 43, 11, 742), new Date(2018, 0, 1, 0, 0, 0, 0)],
+    [new Date(2020, 11, 7, 19, 27, 7, 13), new Date(2019, 11, 30, 0, 0, 0, 0)],
+  ])(
+    'isoyear',
+    (date, expected): void => {
+      expect(startOfTimeSize(date, 'isoyear')).toEqual(expected);
     },
   );
 });

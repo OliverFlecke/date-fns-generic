@@ -7,6 +7,8 @@ import {
   startOfMonth,
   startOfQuarter,
   startOfYear,
+  startOfISOWeek,
+  startOfISOYear,
 } from 'date-fns';
 import TimeSize, { TimeSizeString } from './TimeSize';
 
@@ -39,6 +41,9 @@ export default function startOfTimeSize(
     case TimeSize.Week:
       return startOfWeek(date);
 
+    case TimeSize.ISOWeek:
+      return startOfISOWeek(date);
+
     case TimeSize.Month:
       return startOfMonth(date);
 
@@ -47,6 +52,9 @@ export default function startOfTimeSize(
 
     case TimeSize.Year:
       return startOfYear(date);
+
+    case TimeSize.ISOYear:
+      return startOfISOYear(date);
 
     default:
       throw new TypeError(`Unknown time size: ${timeSize}`);

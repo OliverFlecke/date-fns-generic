@@ -5,9 +5,11 @@ enum TimeSize {
   Hour = 'hour',
   Day = 'day',
   Week = 'week',
+  ISOWeek = 'isoweek',
   Month = 'month',
   Quarter = 'quarter',
   Year = 'year',
+  ISOYear = 'isoyear',
 }
 
 export default TimeSize;
@@ -19,6 +21,8 @@ export type TimeSizeString =
   | 'hour'
   | 'day'
   | 'week'
+  | 'isoweek'
   | 'month'
   | 'quarter'
-  | 'year';
+  | 'year'
+  | 'isoyear';
