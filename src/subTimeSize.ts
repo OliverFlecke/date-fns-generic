@@ -10,9 +10,13 @@ import {
 } from 'date-fns';
 
 /**
+ * @description Subtract a amount of a given time size from a given date
+ *
  * @param date The date to subtract the amount of time size- from
  * @param timeSize The size of the time to subtract from the date
  * @param amount The amount of timesizes to subtract. Defaults to one
+ * @returns A new date where the amount of the given time size has been
+ * subtracted
  */
 export default function subTimeSize(
   date: Date | string | number,

@@ -1,4 +1,4 @@
-import { addTimeSize } from '../addTimeSize';
+import addTimeSize from '../addTimeSize';
 
 describe('Adding sizes', (): void => {
   test.each([

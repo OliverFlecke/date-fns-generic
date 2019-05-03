@@ -19,7 +19,7 @@ import { TimeSize } from './TimeSize';
  * @param amount The amount to add to the date. Will default to one
  * @returns A new date object with the added amount
  */
-export function addTimeSize(
+export default function addTimeSize(
   date: string | number | Date,
   timeSize: TimeSize,
   amount?: number,
