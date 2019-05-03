@@ -1,11 +1,14 @@
 {
-  "name": "date-fns-generic",
+  "name": "@oliverflecke/date-fns-generic",
   "version": "0.1.0",
   "description": "Generic utils for the `date-fns` library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "keywords": [
-    "date-fns"
+    "date-fns",
+    "generic",
+    "util",
+    "helper"
   ],
   "author": "Oliver Fleckenstein",
   "license": "ISC",

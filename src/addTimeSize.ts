@@ -7,17 +7,20 @@ import {
   addSeconds,
   addWeeks,
   addMinutes,
+  addHours,
 } from 'date-fns';
 import { TimeSize } from './TimeSize';
 
 /**
+ * @description Add any amount of a time size to a given date
+ *
  * @param date The date to add the time size to
  * @param timeSize Time size to add to the date
  * @param amount The amount to add to the date. Will default to one
  * @returns A new date object with the added amount
  */
 export function addTimeSize(
-  date: Date,
+  date: string | number | Date,
   timeSize: TimeSize,
   amount?: number,
 ): Date {
@@ -30,6 +33,9 @@ export function addTimeSize(
 
     case 'minute':
       return addMinutes(date, amount || 1);
+
+    case 'hour':
+      return addHours(date, amount || 1);
 
     case 'day':
       return addDays(date, amount || 1);

@@ -2,6 +2,48 @@ import { addTimeSize } from '../addTimeSize';
 
 describe('Adding sizes', (): void => {
   test.each([
+    [
+      new Date(2019, 4, 2, 10, 15, 10, 100),
+      new Date(2019, 4, 2, 10, 15, 10, 101),
+    ],
+  ])(
+    'One millisecond',
+    (date, expected): void => {
+      expect(addTimeSize(date, 'millisecond')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [
+      new Date(2019, 4, 2, 10, 15, 10, 123),
+      new Date(2019, 4, 2, 10, 15, 11, 123),
+    ],
+  ])(
+    'One second',
+    (date, expected): void => {
+      expect(addTimeSize(date, 'second')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [new Date(2019, 4, 2, 10, 15, 123), new Date(2019, 4, 2, 10, 16, 123)],
+  ])(
+    'One minute',
+    (date, expected): void => {
+      expect(addTimeSize(date, 'minute')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [new Date(2019, 4, 2, 10, 15, 123), new Date(2019, 4, 2, 11, 15, 123)],
+  ])(
+    'One hour',
+    (date, expected): void => {
+      expect(addTimeSize(date, 'hour')).toEqual(expected);
+    },
+  );
+
+  test.each([
     [new Date(2019, 4, 1), new Date(2019, 4, 2)],
     [new Date(2019, 4, 31), new Date(2019, 5, 1)],
   ])(
@@ -48,6 +90,15 @@ describe('Adding sizes', (): void => {
     'One quarter (default)',
     (date, expected): void => {
       expect(addTimeSize(date, 'quarter')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [new Date(2019, 4, 2, 10, 15, 123), new Date(2020, 4, 2, 10, 15, 123)],
+  ])(
+    'One year',
+    (date, expected): void => {
+      expect(addTimeSize(date, 'year')).toEqual(expected);
     },
   );
 });
