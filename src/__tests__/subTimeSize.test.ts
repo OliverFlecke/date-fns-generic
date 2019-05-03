@@ -120,6 +120,30 @@ describe('Subtract one (default)', (): void => {
 
   test.each([
     [
+      new Date(2019, 4, 10, 10, 15, 31, 123),
+      new Date(2019, 4, 3, 10, 15, 31, 123),
+    ],
+    [
+      new Date(2018, 6, 19, 3, 43, 11, 742),
+      new Date(2018, 6, 12, 3, 43, 11, 742),
+    ],
+    [
+      new Date(2020, 11, 9, 19, 27, 7, 13),
+      new Date(2020, 11, 2, 19, 27, 7, 13),
+    ],
+    [
+      new Date(2020, 11, 1, 19, 27, 7, 13),
+      new Date(2020, 10, 24, 19, 27, 7, 13),
+    ],
+  ])(
+    'One week',
+    (date, expected): void => {
+      expect(subTimeSize(date, 'week')).toEqual(expected);
+    },
+  );
+
+  test.each([
+    [
       new Date(2019, 4, 2, 10, 15, 31, 123),
       new Date(2019, 3, 2, 10, 15, 31, 123),
     ],

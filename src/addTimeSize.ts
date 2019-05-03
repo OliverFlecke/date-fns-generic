@@ -9,7 +9,7 @@ import {
   addMinutes,
   addHours,
 } from 'date-fns';
-import { TimeSize } from './TimeSize';
+import TimeSize, { TimeSizeString } from './TimeSize';
 
 /**
  * @description Add any amount of a time size to a given date
@@ -21,38 +21,38 @@ import { TimeSize } from './TimeSize';
  */
 export default function addTimeSize(
   date: string | number | Date,
-  timeSize: TimeSize,
+  timeSize: TimeSize | TimeSizeString,
   amount?: number,
 ): Date {
   switch (timeSize) {
-    case 'millisecond':
+    case TimeSize.Millisecond:
       return addMilliseconds(date, amount || 1);
 
-    case 'second':
+    case TimeSize.Second:
       return addSeconds(date, amount || 1);
 
-    case 'minute':
+    case TimeSize.Minute:
       return addMinutes(date, amount || 1);
 
-    case 'hour':
+    case TimeSize.Hour:
       return addHours(date, amount || 1);
 
-    case 'day':
+    case TimeSize.Day:
       return addDays(date, amount || 1);
 
-    case 'week':
+    case TimeSize.Week:
       return addWeeks(date, amount || 1);
 
-    case 'month':
+    case TimeSize.Month:
       return addMonths(date, amount || 1);
 
-    case 'quarter':
+    case TimeSize.Quarter:
       return addQuarters(date, amount || 1);
 
-    case 'year':
+    case TimeSize.Year:
       return addYears(date, amount || 1);
 
     default:
-      throw new Error('Unsupported timesize');
+      throw new TypeError(`Unsupported time size: ${timeSize}`);
   }
 }

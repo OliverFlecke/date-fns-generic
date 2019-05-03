@@ -1,4 +1,4 @@
-import { TimeSize } from './TimeSize';
+import TimeSize, { TimeSizeString } from './TimeSize';
 import {
   subMilliseconds,
   subSeconds,
@@ -7,6 +7,7 @@ import {
   subDays,
   subMonths,
   subYears,
+  subWeeks,
 } from 'date-fns';
 
 /**
@@ -20,29 +21,32 @@ import {
  */
 export default function subTimeSize(
   date: Date | string | number,
-  timeSize: TimeSize,
+  timeSize: TimeSize | TimeSizeString,
   amount?: number,
 ): Date {
   switch (timeSize) {
-    case 'millisecond':
+    case TimeSize.Millisecond:
       return subMilliseconds(date, amount || 1);
 
-    case 'second':
+    case TimeSize.Second:
       return subSeconds(date, amount || 1);
 
-    case 'minute':
+    case TimeSize.Minute:
       return subMinutes(date, amount || 1);
 
-    case 'hour':
+    case TimeSize.Hour:
       return subHours(date, amount || 1);
 
-    case 'day':
+    case TimeSize.Day:
       return subDays(date, amount || 1);
 
-    case 'month':
+    case TimeSize.Week:
+      return subWeeks(date, amount || 1);
+
+    case TimeSize.Month:
       return subMonths(date, amount || 1);
 
-    case 'year':
+    case TimeSize.Year:
       return subYears(date, amount || 1);
 
     default:
