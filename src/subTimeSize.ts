@@ -1,5 +1,13 @@
 import { TimeSize } from './TimeSize';
-import { subMilliseconds, subSeconds, subMinutes, subHours, subDays, subMonths, subYears } from 'date-fns';
+import {
+  subMilliseconds,
+  subSeconds,
+  subMinutes,
+  subHours,
+  subDays,
+  subMonths,
+  subYears,
+} from 'date-fns';
 
 /**
  * @param date The date to subtract the amount of time size- from
