@@ -1,6 +1,6 @@
 {
   "name": "@oliverflecke/date-fns-generic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generic utils for the `date-fns` library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
